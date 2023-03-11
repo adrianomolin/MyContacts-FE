@@ -4,10 +4,32 @@ export const Container = styled.div`
   margin-top: 32px;
 `;
 
+export const InputSearchContainer = styled.div`
+  width: 100%;
+
+  input {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+
+    border: none;
+    outline: 0;
+    padding: 16px;
+    border-radius: 25px;
+
+    filter: drop-shadow(${({ theme }) => theme.boxShadow});
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.gray['200']};
+    }
+  }
+`;
+
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 32px;
 
   strong {
     color: ${({ theme }) => theme.colors.gray['900']};
