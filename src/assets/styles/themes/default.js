@@ -21,4 +21,5 @@ export default {
       100: '#E6E6E6',
     },
   },
+  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.04)',
 };

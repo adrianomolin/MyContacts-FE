@@ -21,7 +21,7 @@ export const InputSearchContainer = styled.div`
     padding: 16px;
     border-radius: 25px;
 
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(${({ theme }) => theme.boxShadow});
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.gray['200']};
