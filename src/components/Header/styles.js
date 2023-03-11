@@ -24,7 +24,7 @@ export const InputSearchContainer = styled.div`
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
 
     &::placeholder {
-      color: ${({ theme }) => theme.textColorSecondary};
+      color: ${({ theme }) => theme.colors.gray['200']};
     }
   }
 `;

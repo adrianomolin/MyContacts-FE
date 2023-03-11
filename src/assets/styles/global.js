@@ -7,9 +7,9 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Sora', sans-serif;
   }
-  
+
   body {
-    background: ${({ theme }) => theme.backgroundColor};
+    background: ${({ theme }) => theme.colors.background};
     font-size: 16px;
   }
 
