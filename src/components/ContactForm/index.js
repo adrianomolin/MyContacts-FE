@@ -23,7 +23,7 @@ export default function ContactForm({ buttonLabel }) {
     setName(event.target.value);
 
     if (!event.target.value) {
-      setError({ field: 'name', message: 'Nome é obrigatório' });
+      setError({ field: 'name', message: 'Nome é obrigatório.' });
     } else {
       removeError('name');
     }
@@ -42,9 +42,9 @@ export default function ContactForm({ buttonLabel }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log({
-      name, email, phone, category,
-    });
+    // console.log({
+    //   name, email, phone, category,
+    // });
   }
 
   return (
