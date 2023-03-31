@@ -4,32 +4,33 @@ import { useEffect, useMemo, useState } from 'react';
 import formatPhone from '../../utils/formatPhone';
 
 import {
-  Card,
-  Container,
-  Header,
-  InputSearchContainer,
-  ListHeader,
+  Card, Container, Header, InputSearchContainer, ListHeader,
 } from './styles';
 
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 
+import Loader from '../../components/Loader';
+
 export default function Home() {
   const [contacts, setContacts] = useState([]);
   const [orderBy, setOrderBy] = useState('asc');
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const filtererdContacts = useMemo(() => contacts.filter((contact) => (
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   )), [contacts, searchTerm]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
       .then(async (response) => {
         const json = await response.json();
 
         setContacts(json);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
@@ -48,6 +49,7 @@ export default function Home() {
 
   return (
     <Container>
+      { isLoading && <Loader /> }
 
       <InputSearchContainer>
         <input
